@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 #include <winioctl.h>
-#include "..\NT_Driver_DPCTimer\Ioctls.h"
+#include ".\NT_Driver_DPCTimer\ioctls.h"
 
 int main()
 {
@@ -21,7 +21,7 @@ int main()
     }
 
     DWORD dwOutput;
-    DWORD dwMicroSecond = 1000 * 1000 * 2;
+    DWORD dwMicroSeconds = 1000 * 1000 * 2;
 
     DeviceIoControl(hDevice, IOCTL_START_TIMER, &dwMicroSeconds, sizeof(DWORD), NULL, 0, &dwOutput, NULL);
     Sleep(10000);
